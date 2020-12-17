@@ -1,5 +1,15 @@
 - name: Create Homework Assignment project
-
+  tower_project:
+    name: MitziCom
+    description: "Larry Harker Homework"
+    organization: Default
+    state: present
+    tower_host: tower1.{{tower_GUID}}.example.opentlc.com
+    tower_username: admin
+    tower_password: r3dh4t1!
+    scm_type:  git
+    scm_url: https://github.com/larryharker/ansible_advanced_openstack_infra
+    scm_update_on_launch: yes
 
 - name: Machine Credentail to connect to workstation using openstack.pub
   tower_credential:

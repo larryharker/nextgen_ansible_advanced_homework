@@ -1,3 +1,18 @@
 ---
-
-# tasks file for osp.servers
+- name: Create instances
+  os_server:
+    cloud: openstack
+    name: app1
+    image: rhel-guest
+    key_name: ansible_ssh
+    flavor: m1.medium
+    security_groups: apps
+    delete_fip: yes
+    wait: no
+    nics:
+      - net-name: int_network
+    meta: "group=testservers,deployment_name=Dev"
+    userdata: |
+      #!/bin/bash
+      curl -o /root/.ssh/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
+      cat /root/.ssh/openstack.pub >> /home/cloud-user/.ssh/authorized_keys

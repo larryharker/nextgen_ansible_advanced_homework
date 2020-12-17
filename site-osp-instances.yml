@@ -1,6 +1,10 @@
-- hosts: localhost
-  connection: local
-  become: no
+---
+- name: Manage OpenStack Servers
+  hosts: control_node
   gather_facts: true
+  become: true
+
   roles:
-   - osp-servers
+
+    - osp-servers
+...
