@@ -1,0 +1,6 @@
+[control_node]
+workstation-25d5.dynamic.opentlc.com
+
+[control_node:vars]
+ansible_ssh_user=cloud-user
+ansible_ssh_private_key_file=/root/.ssh/openstack.pem
