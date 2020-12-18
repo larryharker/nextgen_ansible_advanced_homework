@@ -1,6 +1,6 @@
 ---
 - name: Manage OpenStack Servers
-  hosts: control_node
+  hosts: workstation-25d5.dynamic.opentlc.com
   gather_facts: true
   become: true
 
