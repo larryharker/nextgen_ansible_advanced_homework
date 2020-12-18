@@ -16,3 +16,97 @@
       #!/bin/bash
       curl -o /root/.ssh/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
       cat /root/.ssh/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
+
+- name: Create instances
+  os_server:
+    cloud: openstack
+    name: app2
+    image: rhel-guest
+    key_name: ansible_ssh
+    flavor: m1.medium
+    security_groups: apps
+    delete_fip: yes
+    wait: no
+    nics:
+      - net-name: int_network
+    meta: "group=testservers,deployment_name=Dev"
+    userdata: |
+      #!/bin/bash
+      curl -o /root/.ssh/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
+      cat /root/.ssh/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
+
+- name: Create instances
+  os_server:
+    cloud: openstack
+    name: db1
+    image: rhel-guest
+    key_name: ansible_ssh
+    flavor: m1.medium
+    security_groups: db
+    delete_fip: yes
+    wait: no
+    nics:
+      - net-name: int_network
+    meta: "group=testservers,deployment_name=Dev"
+    userdata: |
+      #!/bin/bash
+      curl -o /root/.ssh/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
+      cat /root/.ssh/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
+
+- name: Create instances
+  os_server:
+    cloud: openstack
+    name: frontend
+    image: rhel-guest
+    key_name: ansible_ssh
+    flavor: m1.medium
+    security_groups: frontend
+    delete_fip: yes
+    wait: no
+    nics:
+      - net-name: int_network
+    meta: "group=testservers,deployment_name=Dev"
+    userdata: |
+      #!/bin/bash
+      curl -o /root/.ssh/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
+      cat /root/.ssh/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
+
+- name: Add floating IP to instance
+  os_floating_ip:
+    cloud: openstack
+    state: present
+    reuse: yes
+    server: app1
+    network: ext_network
+    wait: true
+    timeout: 200
+
+- name: Add floating IP to instance
+  os_floating_ip:
+    cloud: openstack
+    state: present
+    reuse: yes
+    server: app2
+    network: ext_network
+    wait: true
+    timeout: 200
+
+- name: Add floating IP to instance
+  os_floating_ip:
+    cloud: openstack
+    state: present
+    reuse: yes
+    server: db1
+    network: ext_network
+    wait: true
+    timeout: 200
+
+- name: Add floating IP to instance
+  os_floating_ip:
+    cloud: openstack
+    state: present
+    reuse: yes
+    server: frontend
+    network: ext_network
+    wait: true
+    timeout: 200
