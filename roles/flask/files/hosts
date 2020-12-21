@@ -1,9 +1,0 @@
-[load_balancers]
-frontend 
-
-[app_servers]
-app1 
-app2
-
-[database_servers]
-db1

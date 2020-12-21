@@ -11,7 +11,7 @@
     wait: no
     nics:
       - net-name: int_network
-    meta: "group=testservers,deployment_name=Dev"
+    meta: "group=app_servers,deployment_name=QA"
     userdata: |
       #!/bin/bash
       curl -o /root/.ssh/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
@@ -29,7 +29,7 @@
     wait: no
     nics:
       - net-name: int_network
-    meta: "group=testservers,deployment_name=Dev"
+    meta: "group=app_servers,deployment_name=QA"
     userdata: |
       #!/bin/bash
       curl -o /root/.ssh/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
@@ -47,7 +47,7 @@
     wait: no
     nics:
       - net-name: int_network
-    meta: "group=testservers,deployment_name=Dev"
+    meta: "group=database_servers,deployment_name=QA"
     userdata: |
       #!/bin/bash
       curl -o /root/.ssh/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
@@ -65,7 +65,7 @@
     wait: no
     nics:
       - net-name: int_network
-    meta: "group=testservers,deployment_name=Dev"
+    meta: "group=load_balancers,deployment_name=QA"
     userdata: |
       #!/bin/bash
       curl -o /root/.ssh/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
