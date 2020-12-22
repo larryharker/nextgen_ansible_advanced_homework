@@ -1,0 +1,10 @@
+- name: Deploy, configure, and populate flask repo
+  hosts: app_servers
+  become: true
+  gather_facts: false
+  tags:
+    - application_servers
+
+  roles:
+
+    - flask
