@@ -26,6 +26,5 @@ pip_dependencies:
 #  - psycopg2-binary
 
 
-#postgres_rhel7_repo: "https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm"
-postgres_rhel7_repo: "https://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo"
+postgres_rhel7_repo: "https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm"
 postgres_library: python-psycopg2
