@@ -2,7 +2,7 @@
 # tasks file for roles/flask
 - name: Copy repo file
   copy:
-    src: https://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo
+    src: ../files/open_three-tier-app.repo
     dest: /etc/yum.repos.d/open_three-tier-app.repo
         
 - name: Add appdb1 IP address to app servers /etc/hosts
