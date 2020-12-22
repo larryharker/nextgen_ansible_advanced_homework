@@ -42,10 +42,6 @@
     dest: "{{ flask_home }}/{{ flask_app_name }}"
     owner: "{{ flask_user }}"
      
-- name: Initialize flask app database resources
-  command: "{{ virtualenv_home }}/{{ flask_app_name }}/bin/python3 {{ flask_home }}/{{ flask_app_name }}/config.py"
-  run_once: true
-
 - name: "Generate {{ flask_app_name }} startup script"    
   template:
     src: launch_resource_hub.j2
