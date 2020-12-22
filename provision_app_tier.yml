@@ -1,7 +1,8 @@
 - name: Deploy, configure, and populate flask repo and virtualenv
-  hosts: apps
+  hosts: app_servers
   become: true
-  gather_facts: true
+  become_user: cloud-user
+  gather_facts: false
   tags:
     - application_servers
 
