@@ -2,8 +2,6 @@
 
 echo Starting {{ flask_app_name }}
 
-source {{ virtualenv_home }}/{{ flask_app_name }}/bin/activate
-
-python3 {{ flask_home }}/{{ flask_app_name }}/app.py
+source {{ flask_app_name }}/bin/activate
 
 echo Finished {{ flask_app_name }}
