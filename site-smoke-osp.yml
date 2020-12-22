@@ -6,3 +6,4 @@
 
   roles:
   - name: openstack_manage_inmemory_inventory
+- import_playbook: smoketest-osp.yml
