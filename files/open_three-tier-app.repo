@@ -21,3 +21,21 @@ name=Red Hat Enterprise Linux 7 Optional
 baseurl=http://192.168.0.5/repos/rhel-7-server-optional-rpms
 enabled=1
 gpgcheck=0
+
+[rhel-server-rhscl-7-rpms]
+name=rhel-server-rhscl-7-rpms
+baseurl=http://admin.na.shared.opentlc.com/repos/tower//3.7.0-4/rhel-server-rhscl-7-rpms
+enabled=1
+gpgcheck=0
+
+[rhel-7-server-ansible-2.9-rpms]
+name=rhel-7-server-ansible-2.9-rpms
+baseurl=http://admin.na.shared.opentlc.com/repos/tower//3.7.0-4/rhel-7-server-ansible-2.9-rpms
+enabled=1
+gpgcheck=0
+
+[epel]
+name=Extra Packages for Enterprise Linux 7
+baseurl=http://d3s3zqyaz8cp2d.cloudfront.net/repos/epel/
+enabled=1
+gpgcheck=0
