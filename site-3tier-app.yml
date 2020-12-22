@@ -7,3 +7,4 @@
   roles:
   - name: openstack_manage_inmemory_inventory
 - import_playbook: provision_app_tier.yml
+- import_playbook: provision_database_tier.yml
