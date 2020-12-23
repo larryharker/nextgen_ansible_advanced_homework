@@ -8,16 +8,10 @@
 
   tasks:
 
-    - debug:
-        msg: 
-          - "IP is {{ __instance.public_v4 }}"
-          - "First App server  {{ groups.app_servers[0] }}" 
-        verbosity: 2        
-
     - name: Smoketest Postgres database
       postgresql_ping:
         db: flask_db
-        login_host: "{{ __instance.public_v4 }}"
+        login_host: db1
         login_user: flask
         login_password: redhat
         ssl_mode: disable
