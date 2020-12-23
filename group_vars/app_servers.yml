@@ -4,7 +4,10 @@ flask_home: /opt/
 flask_repo: https://github.com/tonykay/resource_hub.git  
 flask_scm_ref: main  
 flask_app_lauch_script: /usr/local/bin/launch_resource_hub   
-
+virtualenv_name: "venv-{{ flask_app_name }}"  
+virtualenv_home: /opt/virtual_envs
+virtualenv_python: /usr/bin/python3
+  
 
 app_yum_packages:
   - autoconf
@@ -12,6 +15,13 @@ app_yum_packages:
   - git
   - gcc
   - libtool
+  - python3
+  - python3-devel
+  - python3-pip
+
+pip_dependencies:
+  - virtualenv
+  - pip  
 
 postgres_rhel7_repo: "https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm"
 postgres_library: python-psycopg2
