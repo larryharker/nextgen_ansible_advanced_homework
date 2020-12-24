@@ -11,6 +11,11 @@
     name: "{{ flask_user }}"
     state: present  
 
+- name: Copy repo file
+  copy:
+    src: ../files/open_three-tier-app.repo
+    dest: /etc/yum.repos.d/open_three-tier-app.repo
+
 - name: Install flask packages including postgres pre-reqs
   package:
     name: "{{ __package }}"
