@@ -1,5 +1,27 @@
 ---
-# tasks file for roles/osp-instance-delete
-  - name: Fetch Instance Info
-  - name: Delete instances
-   
+- name: Delete App1 instance
+  os_server:
+    cloud: openstack
+    name: app1
+    state: absent
+---
+
+- name: Delete App2 instance
+  os_server:
+    cloud: openstack
+    name: app2
+    state: absent
+    ---
+
+- name: Delete db1 instance
+  os_server:
+    cloud: openstack
+    name: db1
+    state: absent
+    ---
+
+- name: Delete frontend instance
+  os_server:
+    cloud: openstack
+    name: frontend
+    state: absent
