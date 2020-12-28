@@ -6,4 +6,4 @@
 
   roles:
 
-    - osp-servers
+    - osp-instance-delete
