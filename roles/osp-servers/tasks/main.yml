@@ -59,13 +59,13 @@
     name: frontend
     image: rhel-guest
     key_name: ansible_ssh
-   security_groups: frontend
+    security_groups: frontend
     delete_fip: yes
-   wait: no
-   nics:
+    wait: no
+    nics:
       - net-name: int_network
-   meta: "group=load_balancers,deployment_name=QA"
-   userdata: |
+    meta: "group=load_balancers,deployment_name=QA"
+    userdata: |
       #!/bin/bash
       curl -o /root/.ssh/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
       cat /root/.ssh/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
@@ -75,7 +75,7 @@
    cloud: openstack
     state: present
     reuse: yes
-   server: app1
+    server: app1
     network: ext_network
     wait: true
     timeout: 200
