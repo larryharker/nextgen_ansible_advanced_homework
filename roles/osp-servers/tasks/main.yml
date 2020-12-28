@@ -15,8 +15,8 @@
 #    userdata: |
 #      #!/bin/bash
 #      curl -o /root/.ssh/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
-#     cat /root/.ssh/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
-
+#      cat /root/.ssh/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
+#
 - name: Create instances
   os_server:
     cloud: openstack
@@ -33,7 +33,7 @@
     userdata: |
       #!/bin/bash
       curl -o /root/.ssh/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
-     cat /root/.ssh/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
+      cat /root/.ssh/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
 
 #- name: Create instances
 #  os_server:
@@ -50,9 +50,9 @@
 #   meta: "group=database_servers,deployment_name=QA"
 #    userdata: |
 #      #!/bin/bash
-#     curl -o /root/.ssh/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
+#      curl -o /root/.ssh/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
 #      cat /root/.ssh/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
-
+#
 #- name: Create instances
 #  os_server:
 #    cloud: openstack
@@ -69,7 +69,7 @@
 #      #!/bin/bash
 #      curl -o /root/.ssh/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
 #      cat /root/.ssh/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
-
+#
 #- name: Add floating IP to instance
 #  os_floating_ip:
 #   cloud: openstack
@@ -102,7 +102,7 @@
 #    network: ext_network
 #    wait: true
 #    timeout: 200
-
+#
 #- name: Add floating IP to instance
 #  os_floating_ip:
 #    cloud: openstack
