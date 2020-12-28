@@ -30,7 +30,7 @@
  
     - name: Check webserver for correct response
       uri:
-        url: "http://{{ groups.frontend[0] }}/ping"
+        url: "http://{{ groups.load_balancers[0] }}/ping"
         return_content: yes
       until: '"alive" in result.content'
       retries: 10
