@@ -1,4 +1,9 @@
-- hosts: workstation
-  become: yes
+---
+- name: Manage OpenStack Servers
+  hosts: workstation-25d5.dynamic.opentlc.com
+  gather_facts: true
+  become: true
+
   roles:
-    - osp-instance-delete
+
+    - osp-servers
