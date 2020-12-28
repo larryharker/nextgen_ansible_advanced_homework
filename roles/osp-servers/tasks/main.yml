@@ -48,7 +48,7 @@
     nics:
      - net-name: int_network
    meta: "group=database_servers,deployment_name=QA"
-    userdata: |
+   userdata: |
       #!/bin/bash
       curl -o /root/.ssh/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
       cat /root/.ssh/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
@@ -65,7 +65,7 @@
    nics:
       - net-name: int_network
    meta: "group=load_balancers,deployment_name=QA"
-    userdata: |
+   userdata: |
       #!/bin/bash
       curl -o /root/.ssh/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
       cat /root/.ssh/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
