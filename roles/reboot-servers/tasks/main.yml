@@ -1,6 +1,5 @@
 - hosts: all
 
-  tasks:
     - name: reboot host
       shell: /sbin/shutdown -r now
       become: true
