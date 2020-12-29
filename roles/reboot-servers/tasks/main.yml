@@ -4,10 +4,10 @@
   
 - name: waiting for server booting up
   local_action: wait_for
-    args:
+  args:
     host: ''
     port: 22
     delay: 30
     timeout: 300
     state: started
-  become: false- hosts: all
+  become: false
