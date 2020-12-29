@@ -7,4 +7,6 @@
   roles:
 
     - osp-servers
+    - openstack_manage_inmemory_inventory
+    - reboot-servers
 ...
