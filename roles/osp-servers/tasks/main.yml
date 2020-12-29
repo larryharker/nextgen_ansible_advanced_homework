@@ -1,5 +1,5 @@
 ---
-- name: Create instances
+- name: Create app1 instance
   os_server:
     cloud: openstack
     name: app1
@@ -17,7 +17,7 @@
       curl -o /root/.ssh/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
       cat /root/.ssh/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
 
-- name: Create instances
+- name: Create app2 instance
   os_server:
     cloud: openstack
     name: app2
@@ -35,7 +35,7 @@
       curl -o /root/.ssh/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
       cat /root/.ssh/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
 
-- name: Create instances
+- name: Create db1 instance
   os_server:
     cloud: openstack
     name: db1
@@ -53,7 +53,7 @@
       curl -o /root/.ssh/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
       cat /root/.ssh/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
 
-- name: Create instances
+- name: Create frontend instance
   os_server:
     cloud: openstack
     name: frontend
@@ -71,7 +71,7 @@
       curl -o /root/.ssh/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
       cat /root/.ssh/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
 
-- name: Add floating IP to instance
+- name: Add floating IP to app1 instance
   os_floating_ip:
     cloud: openstack
     state: present
@@ -81,7 +81,7 @@
     wait: true
     timeout: 200
 
-- name: Add floating IP to instance
+- name: Add floating IP to app2 instance
   os_floating_ip:
     cloud: openstack
     state: present
@@ -91,7 +91,7 @@
     wait: true
     timeout: 200
 
-- name: Add floating IP to instance
+- name: Add floating IP to db1 instance
   os_floating_ip:
     cloud: openstack
     state: present
@@ -101,7 +101,7 @@
     wait: true
     timeout: 200
 
-- name: Add floating IP to instance
+- name: Add floating IP to frontend instance
   os_floating_ip:
     cloud: openstack
     state: present
