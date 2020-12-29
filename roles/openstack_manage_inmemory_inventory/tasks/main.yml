@@ -20,14 +20,14 @@
         loop_var: __instance
 
 
-    - name: Output the in-memory inventory
-      block:
-
-      - name: Print hosts to STDOUT
-        debug:
-          msg:
-            - "name: {{ __instance.public_v4 }}"
-            - "group: {{ __instance.metadata.group }}"
-        loop: "{{ r_instances.openstack_servers }}"
-        loop_control:
-          loop_var: __instance
+#    - name: Output the in-memory inventory
+#      block:
+#
+#      - name: Print hosts to STDOUT
+#        debug:
+#          msg:
+#            - "name: {{ __instance.public_v4 }}"
+#            - "group: {{ __instance.metadata.group }}"
+#        loop: "{{ r_instances.openstack_servers }}"
+#        loop_control:
+#          loop_var: __instance
