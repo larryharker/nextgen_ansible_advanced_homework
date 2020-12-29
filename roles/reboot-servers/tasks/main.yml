@@ -1,14 +1,21 @@
 ---
-- name: reboot host
-    shell: /sbin/shutdown -r now
-    become: true
-  
-- name: waiting for server booting up
-    local_action: wait_for
-    args:
-      host: ''
-      port: 22
-      delay: 30
-      timeout: 300
-      state: started
-    become: false
+- hosts: all
+
+  tasks:
+    - name: reboot host
+      shell: /sbin/shutdown -r now
+      become: true
+
+    - name: waiting for server booting up
+      local_action: wait_for
+      args:
+        host: ''
+        port: 22
+        delay: 30
+        timeout: 300
+        state: started
+      become: false
+
+    - name: Pause for 5 minutes to build app cache
+      pause:
+        seconds: 30
